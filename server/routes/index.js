@@ -2,17 +2,17 @@ const express = require('express');
 const QuestionModel = require('../models/question');
 
 const router = express.Router();
-const auth = require('./auth');
 
 const passport = require('passport');
 
 router.get('/', (req, res) => {
   console.log(req.session);
 
-  res.send(req.user);
+  res.send({
+    success: true,
+    user: req.user,
+  });
 });
-
-router.use('/auth', auth);
 
 router.get('/protected', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.send('you\'re in');

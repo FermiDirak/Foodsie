@@ -5,12 +5,7 @@ const keys = require('../keys');
 const router = express.Router();
 
 router.post('/login', (req, res, next) => {
-
-  passport.authenticate(
-    'local',
-    { session: false },
-    (error, user, info) => {
-
+  passport.authenticate('local', { session: false }, (error, user, info) => {
       console.log(error, user, info);
 
       if (error || !user) {

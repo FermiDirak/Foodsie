@@ -1,9 +1,9 @@
 const keys = {
-  redditAuth: {
-    clientID: 'tbD5saNQbjOuUQ',
-    clientSecret: '4UZrRhOqj-9mIUd50SLQBic15LM',
+  instagramAuth: {
+    clientID: process.env.INSTAGRAM_CLIENT,
+    clientSecret: process.env.INSTAGRAM_SECRET,
   },
-  secret: 'I love keyboard cats',
+  secret: process.env.SECRET,
 };
 
 module.exports = keys;

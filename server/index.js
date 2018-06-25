@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 
@@ -8,6 +10,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const routes = require('./routes');
+const auth = require('./routes/auth');
+
 const app = express();
 
 /* --------------------- registering Node.js middleware --------------------- */
@@ -25,7 +29,7 @@ require('./passport');
 
 /* ---------------------- Setting up Mongodb database ----------------------- */
 
-mongoose.connect('mongodb://localhost/askInternets', () => {
+mongoose.connect(process.env.DB_HOST, () => {
   console.log('connected to mongodb');
 }).catch((err) => {
   throw new Error('Mongo cannot connect');
@@ -34,6 +38,7 @@ mongoose.connect('mongodb://localhost/askInternets', () => {
 /* ----------------------------- Setting up API ----------------------------- */
 
 app.use('/api/v1', routes);
+app.use('/auth', auth);
 
 /* --------------------------- Starting Server ------------------------------ */
 
