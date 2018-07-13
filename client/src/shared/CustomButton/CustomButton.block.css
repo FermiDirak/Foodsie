@@ -1,0 +1,9 @@
+/*
+* Custom your css components
+*/
+
+:scope {
+  background: blue;
+  border-radius: 8px;
+  position: absolute;
+}

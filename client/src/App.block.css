@@ -1,0 +1,17 @@
+/* Style your App.tsx  */
+:scope {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.footer {
+  padding: 10px 5px ;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  background-color: blue;
+}
