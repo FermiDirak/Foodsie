@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
+import styles from './App.block.css';
 
-import Header from './components/Header';
+// import Header from './components/Header';
 import Home from "./pages/Home";
 
-import styles from "./App.block.css";
 
 class App extends Component {
   render() {
@@ -12,12 +12,12 @@ class App extends Component {
       <BrowserRouter>
         <div className={styles}>
 
-          <Header/>
+          {/* <Header /> */}
 
           <main>
             <Route exact path="/" component={Home} />
           </main>
-          <footer className={styles.footer}>
+          <footer>
             Footer
           </footer>
         </div>

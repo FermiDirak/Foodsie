@@ -1,0 +1,10 @@
+:scope {
+  display: flex;
+  flex-direction: row;
+  background: green;
+  width: 100%;
+}
+
+.test {
+  display: flex;
+}

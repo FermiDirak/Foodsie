@@ -1,5 +1,8 @@
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
+import objstr from 'obj-str';
+import styles from 'header.block.css';
+
+console.log(styles);
 
 interface Props {
   user?: {
@@ -7,18 +10,15 @@ interface Props {
   };
 }
 
-interface State {
-
-}
-
-class Header extends Component<Props, State> {
-  state = {
-
-  }
+class Header extends Component<Props> {
 
   render() {
+    const style = objstr({
+      [styles]: true,
+    });
+
     return (
-      <header>
+      <header className={style}>
         This is the header { this.props.user ? this.props.user.username : 'User' }
       </header>
     );
