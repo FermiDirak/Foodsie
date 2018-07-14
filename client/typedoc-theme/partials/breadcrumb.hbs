@@ -1,0 +1,18 @@
+{{!--
+    This file has been modified for use on the CSS Blocks website.
+--}}
+
+{{#if parent}}
+    {{#with parent}}{{> breadcrumb}}{{/with}}
+    <li>
+        {{#if url}}
+            <a href="{{relativeURL url}}">{{name}}</a>
+        {{else}}
+            <span>{{name}}</span>
+        {{/if}}
+    </li>
+{{else}}
+    <li>
+        <a href="{{relativeURL 'index.html'}}">Packages</a>
+    </li>
+{{/if}}

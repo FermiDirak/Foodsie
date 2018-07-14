@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom'
-import styles from './App.block.css';
+import { BrowserRouter, Link, Route } from 'react-router-dom'
 
-// import Header from './components/Header';
 import Home from "./pages/Home";
 
+import styles from "./App.block.css";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className={styles}>
-
-          {/* <Header /> */}
-
+          <nav>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+            </ul>
+          </nav>
           <main>
             <Route exact path="/" component={Home} />
           </main>
-          <footer>
+          <footer className={styles.footer}>
             Footer
           </footer>
         </div>
