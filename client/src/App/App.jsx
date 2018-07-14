@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import style from './App.module.css';
 
-import { Router, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Header from '../components/Header/Header.jsx';
+import Home from '../pages/Home/Home.jsx';
 import Placeholder from '../pages/Placeholder/Placeholder.jsx';
 
 
@@ -12,7 +13,11 @@ class App extends Component {
     return (
       <div className={style['App']}>
         <Header/>
-        <Placeholder />
+
+        <Switch>
+          <Route exact path='/map' component={Home}/>
+          <Route exact path='/' component={Placeholder}/>
+        </Switch>
       </div>
     );
   }
