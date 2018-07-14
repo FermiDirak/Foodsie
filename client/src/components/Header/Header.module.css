@@ -1,0 +1,23 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 56px;
+  width: 100vw;
+
+  padding: 0 24px;
+
+  color: var(--white);
+  background: var(--red);
+}
+
+.Logo {
+  font-weight: 600;
+  /* margin-bottom: 5px; */
+
+  color: var(--red);
+  padding: 0 24px;
+  background: var(--white);
+  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}
