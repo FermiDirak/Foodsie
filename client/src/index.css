@@ -18,7 +18,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-div {
+div, article, header, aside {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 }

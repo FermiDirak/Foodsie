@@ -7,53 +7,30 @@ import LikesIcon from 'react-feather/dist/icons/thumbs-up';
 
 class NavigationBar extends Component {
   static propTypes = {
-    navItems: PropTypes.arrayOf(PropTypes.shape({
-      'title': PropTypes.string,
-      'icon': PropTypes.node,
-    })),
-    initialSelected: PropTypes.number,
+    children: PropTypes.node,
+    selected: PropTypes.number,
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
-    navItems: [
-      {
-        title: 'Hearts',
-        icon: HeartIcon,
-      },
-      {
-        title: 'Likes',
-        icon: LikesIcon,
-      }
-    ],
-    initialSelected: 0,
+    selected: 0,
+    onChange: () => {},
   }
 
   state = {
-    selected: this.props.initialSelected,
-  }
-
-  renderNavItem = (navItem, isSelected) => {
-    const { title, icon } = navItem;
-
-    return (
-      <div className={styles['nav-item']}>
-        <LikesIcon/>
-        <h2>{title}</h2>
-      </div>
-    );
+    selected: this.props.selected,
   }
 
   render() {
-    const { navItems } = this.props;
+    const { children } = this.props;
     const { selected } = this.state;
 
     return (
       <nav className={styles.container}>
         {
-          navItems.map((navItem, i) => {
-            const isSelected = selected === i;
-
-            return this.renderNavItem(navItem, isSelected);
+          // add onClick listener to each child
+          children.map((child) => {
+            return child;
           })
         }
       </nav>

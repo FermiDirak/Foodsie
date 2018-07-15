@@ -2,4 +2,6 @@
   background: var(--white);
 
   width: 500px;
+
+  max-height: 800px;
 }
