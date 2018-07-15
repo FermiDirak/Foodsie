@@ -11,11 +11,13 @@ class RestaurantsFeed extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        {/* <RestaurantsFeedItem />
-        <RestaurantsFeedItem />
-        <RestaurantsFeedItem />
-        <RestaurantsFeedItem /> */}
+      <div className={styles['container']}>
+        <div className={styles['scroll-container']}>
+          <RestaurantsFeedItem />
+          <RestaurantsFeedItem />
+          <RestaurantsFeedItem />
+          <RestaurantsFeedItem />
+        </div>
       </div>
     );
   }
