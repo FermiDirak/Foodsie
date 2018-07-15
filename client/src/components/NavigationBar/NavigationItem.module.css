@@ -5,12 +5,14 @@
   align-items: center;
 
   padding-top: 16px;
-  padding: 8px;
+  padding: 6px 0 4px 0;
   margin: 0 4px;
 
   border-bottom: 2px solid var(--red);
 
   color: var(--darkgrey);
+
+  cursor: pointer;
 }
 
 .nav-item h2 {

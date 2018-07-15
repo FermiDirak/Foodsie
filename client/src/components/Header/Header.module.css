@@ -19,5 +19,5 @@
   color: var(--red);
   padding: 0 24px;
   background: var(--white);
-  clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+  clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
 }
