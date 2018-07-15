@@ -7088,6 +7088,10 @@ react-error-overlay@5.0.0-next.3e165448:
   version "5.0.0-next.3e165448"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.0.0-next.3e165448.tgz#2cbd10780c1fa9c7e35d6e443773e18948b7ee49"
 
+react-feather@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-1.1.1.tgz#dd59143af457601e68f2cd3bf32c0d94d30f89e7"
+
 react-router-dom@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.3.1.tgz#4c2619fc24c4fa87c9fd18f4fb4a43fe63fbd5c6"
