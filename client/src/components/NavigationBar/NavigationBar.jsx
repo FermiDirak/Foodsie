@@ -23,9 +23,9 @@ class NavigationBar extends Component {
     const { selected } = this.state;
 
     return (
-      <nav className={styles.container}>
+      <nav className={styles['container']}>
         {
-          // add onClick listener to each child
+          // @TODO: add onClick listener to each child
           children.map((child) => {
             return child;
           })

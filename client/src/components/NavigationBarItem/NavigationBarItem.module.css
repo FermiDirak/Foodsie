@@ -1,4 +1,4 @@
-.nav-item {
+.container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -15,11 +15,11 @@
   cursor: pointer;
 }
 
-.nav-item h2 {
+.label {
   font-size: 14pt;
   font-weight: 200;
 }
 
-.nav-item-highlighted {
+.highlighted {
   color: var(--red);
 }
