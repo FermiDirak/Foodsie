@@ -5,3 +5,11 @@
   flex: 1;
   background: var(--white);
 }
+
+.map-container {
+  flex: 1;
+}
+
+.map-container > div {
+  flex: 1;
+}

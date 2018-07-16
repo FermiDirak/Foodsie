@@ -11,7 +11,11 @@ class Home extends Component {
   render() {
     return (
       <div className={styles.Home}>
-        <Map/>
+
+        <div className={styles['map-container']} >
+          <Map/>
+        </div>
+
         <Sidebar/>
       </div>
     );

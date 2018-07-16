@@ -1,4 +1,4 @@
-.Map {
+.container {
   width: 100%;
 
   justify-content: center;
@@ -6,4 +6,10 @@
 
   color: var(--white);
   background: var(--lightgrey);
+}
+
+.map {
+  position: relative !important;
+  width: 100%;
+  height: 100%;
 }
