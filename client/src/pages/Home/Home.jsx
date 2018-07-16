@@ -6,7 +6,16 @@ import Map from '../../components/Map/Map.jsx';
 
 class Home extends Component {
   state = {
+    places: [],
   };
+
+  componentDidMount() {
+
+  }
+
+  getPlaces() {
+
+  }
 
   render() {
     return (
