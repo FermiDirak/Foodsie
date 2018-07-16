@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Sidebar.module.css';
 
-import { NavigationBar, NavigationItem } from '../NavigationBar';
+import NavigationBar from '../NavigationBar/NavigationBar.jsx';
+import NavigationBarItem from '../NavigationBarItem/NavigationBarItem.jsx';
+
 import RestaurantsFeed from '../RestauraantsFeed/RestaurantsFeed.jsx';
 
 import RestaurantsIcon from 'react-feather/dist/icons/heart';
@@ -17,8 +19,8 @@ class Sidebar extends Component {
     return (
       <aside className={styles.Sidebar}>
         <NavigationBar>
-          <NavigationItem label='restuarants' icon={<RestaurantsIcon/>} />
-          <NavigationItem label='foodies' icon={<FoodiesIcon/>} />
+          <NavigationBarItem label='restuarants' icon={<RestaurantsIcon/>} />
+          <NavigationBarItem label='foodies' icon={<FoodiesIcon/>} />
         </NavigationBar>
 
         <RestaurantsFeed />

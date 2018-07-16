@@ -9,8 +9,8 @@ class Header extends Component {
 
   render() {
     return (
-      <header className={styles.Header}>
-        <h1 className={styles.Logo}>
+      <header className={styles['container']}>
+        <h1 className={styles['logo']}>
           Foodsie.io
         </h1>
       </header>

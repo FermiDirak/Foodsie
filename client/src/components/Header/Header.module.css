@@ -1,4 +1,4 @@
-.Header {
+.container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,7 +11,7 @@
   background: var(--white);
 }
 
-.Logo {
+.logo {
   font-weight: 600;
   /* margin-bottom: 5px; */
 

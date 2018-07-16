@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './NavigationItem.module.css';
+import styles from './NavigationBarItem.module.css';
 
-class NavigationItem extends Component {
+class NavigationBarItem extends Component {
   static propTypes = {
     isSelected: PropTypes.boolean,
     icon: PropTypes.node,
@@ -27,4 +27,4 @@ class NavigationItem extends Component {
   }
 }
 
-export default NavigationItem;
+export default NavigationBarItem;

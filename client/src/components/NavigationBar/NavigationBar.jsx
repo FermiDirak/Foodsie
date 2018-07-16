@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NavigationBar.module.css';
 
-import HeartIcon from 'react-feather/dist/icons/heart';
-import LikesIcon from 'react-feather/dist/icons/thumbs-up';
-
 class NavigationBar extends Component {
   static propTypes = {
     children: PropTypes.node,
