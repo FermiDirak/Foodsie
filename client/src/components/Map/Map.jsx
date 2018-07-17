@@ -6,8 +6,6 @@ import { googleMapsAPIKey } from '../../publicKeys';
 
 import GoogleMap, {
   GoogleApiWrapper,
-  InfoWindow,
-  Marker,
 } from 'google-maps-react';
 
 class Map extends Component {
@@ -34,19 +32,43 @@ class Map extends Component {
       type: ['restaurant'],
     };
 
-    placesService.nearbySearch(request, (results, status) => {
+    console.log(placesService);
+
+    placesService.nearbySearch(request, (places, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
 
-        // remove photos
-        results.forEach(result => { result.photos = [] });
+        let requestsCompletedCount = 0;
 
-        //draw markers for each place
+        // get more detailed photos
+        places.forEach((place, i) => {
+          const request = {
+            placeId: place.place_id,
+            fields: ['photos'],
+          };
 
-        fetchPlaces(results);
+          placesService.getDetails(request, (placeDetails, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              places[i].photos = placeDetails.photos;
+            }
+
+            requestsCompletedCount += 1;
+
+            if (requestsCompletedCount === places.length) {
+              onCompleteRequest(places);
+            }
+          });
+        });
+
       } else {
         console.error(`${status}: Google Maps API must be down`);
       }
     });
+
+    function onCompleteRequest(places) {
+      places = places.filter(place => place.photos && place.photos.length >= 3);
+
+      fetchPlaces(places);
+    }
   }
 
   render() {
