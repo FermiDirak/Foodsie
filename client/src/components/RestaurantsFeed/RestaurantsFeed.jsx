@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './RestaurantsFeed.module.css';
 
-import RestaurantsFeedItem from './RestaurantsFeedItem.jsx';
+import RestaurantsFeedItem from '../RestaurantsFeedItem/RestaurantsFeedItem.jsx';
 
 class RestaurantsFeed extends Component {
   state = {

@@ -4,7 +4,7 @@ import styles from './NavigationBarItem.module.css';
 
 class NavigationBarItem extends Component {
   static propTypes = {
-    isSelected: PropTypes.boolean,
+    isSelected: PropTypes.bool,
     icon: PropTypes.node,
     label: PropTypes.string,
   }

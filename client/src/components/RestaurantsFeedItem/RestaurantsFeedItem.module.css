@@ -7,3 +7,13 @@
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.10) 0px 0px 1px 0px, rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
 }
+
+.image-gallery {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr;
+
+  width: 225px;
+  height: 200px;
+}

@@ -9,7 +9,10 @@ class RestaurantsFeedItem extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={styles['container']}>
+        <div className={styles['image-gallery']}>
+          Hello
+        </div>
 
       </div>
     );

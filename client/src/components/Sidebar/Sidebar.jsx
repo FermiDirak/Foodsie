@@ -5,7 +5,7 @@ import styles from './Sidebar.module.css';
 import NavigationBar from '../NavigationBar/NavigationBar.jsx';
 import NavigationBarItem from '../NavigationBarItem/NavigationBarItem.jsx';
 
-import RestaurantsFeed from '../RestauraantsFeed/RestaurantsFeed.jsx';
+import RestaurantsFeed from '../RestaurantsFeed/RestaurantsFeed.jsx';
 
 import RestaurantsIcon from 'react-feather/dist/icons/heart';
 import FoodiesIcon from 'react-feather/dist/icons/users';
