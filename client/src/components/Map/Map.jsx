@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Map.module.css';
 
+import { googleMapsAPIKey } from '../../publicKeys';
+
 import GoogleMap, {
   GoogleApiWrapper,
   InfoWindow,
@@ -34,7 +36,7 @@ const loadingContainer = (props) => (
 )
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyC4Li8mrhNuFLOEmn-Fcfjgb1-0jxBi7dk',
+  apiKey: googleMapsAPIKey,
   libraries: ['places', 'visualization'],
   LoadingContainer: loadingContainer,
 })(Map);
