@@ -11,19 +11,53 @@ import GoogleMap, {
 } from 'google-maps-react';
 
 class Map extends Component {
+  static propTypes = {
+    fetchPlaces: PropTypes.func,
+    google: PropTypes.object,
+  }
+
+  static defaultProps = {
+    fetchPlaces: () => {},
+  }
+
   state = {
 
   };
+
+  fetchPlaces = (_, map, place) => {
+    const { fetchPlaces, google } = this.props;
+    const placesService = new google.maps.places.PlacesService(map);
+
+    const request = {
+      location: map.getCenter(),
+      radius: 500,
+      type: ['restaurant'],
+    };
+
+    placesService.nearbySearch(request, (results, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+        // remove photos
+        results.forEach(result => { result.photos = [] });
+
+        //draw markers for each place
+
+        fetchPlaces(results);
+      } else {
+        console.error(`${status}: Google Maps API must be down`);
+      }
+    });
+  }
 
   render() {
     return (
       <GoogleMap
         google={this.props.google}
         className={styles['map']}
-        style={{flex: '1'}}
         zoom={15}
         centerAroundCurrentLocation={true}
-        onClick={this.onMapClick}
+        onClick={this.fetchPlaces}
+        onReady={this.fetchPlaces}
         clickableIcons={true}
         disableDefaultUI={true}
       />
