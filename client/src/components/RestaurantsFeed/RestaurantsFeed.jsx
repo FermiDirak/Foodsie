@@ -17,6 +17,8 @@ class RestaurantsFeed extends Component {
           <RestaurantsFeedItem />
           <RestaurantsFeedItem />
           <RestaurantsFeedItem />
+          <RestaurantsFeedItem />
+          <RestaurantsFeedItem />
         </div>
       </div>
     );
