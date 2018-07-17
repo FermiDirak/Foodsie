@@ -15,34 +15,8 @@ class Home extends Component {
   /** fetches nearby places and sets it as state
    * @param places Nearby places */
   fetchPlaces = (places) => {
+    this.setState({ places: places });
 
-    console.log(places);
-
-    // let promises = [];
-
-    // places = places.forEach(place => {
-    //   let promise = axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${place.place_id}&fields=photos&key=${googleMapsAPIKey}`)
-    //     .then(res => {
-    //       return res.result.photos;
-    //     })
-    //     .then(photos => {
-    //       return photos.map(photo => photo.photo_reference);
-    //     })
-    //     .then(photoRefs => {
-    //       places.photos = photoRefs;
-    //     });
-
-    //   promises.push(promise);
-    // });
-
-    // Promise.all(promises)
-    //   .then(() => {
-    //     console.log(places);
-    //     this.setState({ places: places });
-    //   })
-    //   .catch(error => { console.error(error) });
-
-    // this.setState({ places: places });
   }
 
   render() {

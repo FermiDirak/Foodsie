@@ -32,8 +32,6 @@ class Map extends Component {
       type: ['restaurant'],
     };
 
-    console.log(placesService);
-
     placesService.nearbySearch(request, (places, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
 
