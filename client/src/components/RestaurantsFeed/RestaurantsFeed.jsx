@@ -5,20 +5,26 @@ import styles from './RestaurantsFeed.module.css';
 import RestaurantsFeedItem from '../RestaurantsFeedItem/RestaurantsFeedItem.jsx';
 
 class RestaurantsFeed extends Component {
-  state = {
+  static propTypes = {
+    restaurants: PropTypes.array,
+  }
 
-  };
+  static defaultProps = {
+    restaurants: [],
+  }
 
   render() {
+    const { restaurants } = this.props;
+
     return (
       <div className={styles['container']}>
         <div className={styles['scroll-container']}>
-          <RestaurantsFeedItem />
-          <RestaurantsFeedItem />
-          <RestaurantsFeedItem />
-          <RestaurantsFeedItem />
-          <RestaurantsFeedItem />
-          <RestaurantsFeedItem />
+
+          {
+            restaurants.map(restaurant => (
+              <RestaurantsFeedItem key={restaurant.id} restaurant={restaurant} />
+            ))
+          }
         </div>
       </div>
     );

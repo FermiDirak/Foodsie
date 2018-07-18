@@ -11,11 +11,17 @@ import RestaurantsIcon from 'react-feather/dist/icons/heart';
 import FoodiesIcon from 'react-feather/dist/icons/users';
 
 class Sidebar extends Component {
-  state = {
+  static propTypes = {
+    restuarants: PropTypes.array,
+  }
 
-  };
+  static defaultProps = {
+    restaurants: [],
+  }
 
   render() {
+    const { restaurants } = this.props;
+
     return (
       <aside className={styles.Sidebar}>
         <NavigationBar>
@@ -23,7 +29,7 @@ class Sidebar extends Component {
           <NavigationBarItem label='foodies' icon={<FoodiesIcon/>} />
         </NavigationBar>
 
-        <RestaurantsFeed />
+        <RestaurantsFeed restaurants={restaurants}/>
       </aside>
     );
   }

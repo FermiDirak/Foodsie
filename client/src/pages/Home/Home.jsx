@@ -9,17 +9,18 @@ import { googleMapsAPIKey } from '../../publicKeys';
 
 class Home extends Component {
   state = {
-    places: [],
+    restaurants: [],
   };
 
-  /** fetches nearby places and sets it as state
-   * @param places Nearby places */
-  fetchPlaces = (places) => {
-    this.setState({ places: places });
-
+  /** fetches nearby restaurants and sets it as state
+   * @param restaurants Nearby restaurants */
+  fetchPlaces = (restaurants) => {
+    this.setState({ restaurants: restaurants });
   }
 
   render() {
+    const { restaurants } = this.state;
+
     return (
       <div className={styles.Home}>
 
@@ -27,7 +28,7 @@ class Home extends Component {
           <Map fetchPlaces={this.fetchPlaces}/>
         </div>
 
-        <Sidebar/>
+        <Sidebar restaurants={restaurants}/>
       </div>
     );
   }

@@ -3,11 +3,22 @@ import PropTypes from 'prop-types';
 import styles from './RestaurantsFeedItem.module.css';
 
 class RestaurantsFeedItem extends Component {
-  state = {
-
-  };
+  static propTypes = {
+    restaurant: PropTypes.shape({
+      name: PropTypes.string,
+      photos: PropTypes.array,
+      price_level: PropTypes.number,
+      rating: PropTypes.number,
+      types: PropTypes.array,
+      opening_hours: PropTypes.object,
+    }).isRequired,
+  }
 
   render() {
+    const { restaurant } = this.props;
+
+    console.log(restaurant);
+
     return (
       <div className={styles['container']}>
 
@@ -19,7 +30,7 @@ class RestaurantsFeedItem extends Component {
         </div>
 
         <div className={styles['content']}>
-          <h2 className={styles['header']}>Restaurant Name</h2>
+          <h2 className={styles['header']}>{restaurant.name}</h2>
         </div>
 
       </div>

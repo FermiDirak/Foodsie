@@ -18,10 +18,6 @@ class Map extends Component {
     fetchPlaces: () => {},
   }
 
-  state = {
-
-  };
-
   fetchPlaces = (_, map, place) => {
     const { fetchPlaces, google } = this.props;
     const placesService = new google.maps.places.PlacesService(map);
