@@ -24,14 +24,26 @@ class RestaurantsFeedItem extends Component {
       .fill(<StarIcon className={styles['star']}/>);
 
     return (
-      <div className={styles['stars']}
-        style={{clipPath: `inset(0 ${percent}% 0 0)`}}
-      >
-        <StarIcon className={styles['star']}/>
-        <StarIcon className={styles['star']}/>
-        <StarIcon className={styles['star']}/>
-        <StarIcon className={styles['star']}/>
-        <StarIcon className={styles['star']}/>
+      <div className={styles['stars-container']}>
+        <div className={styles['stars']}
+          style={{clipPath: `inset(0 ${percent}% 0 0)`}}
+        >
+          <StarIcon className={styles['star']}/>
+          <StarIcon className={styles['star']}/>
+          <StarIcon className={styles['star']}/>
+          <StarIcon className={styles['star']}/>
+          <StarIcon className={styles['star']}/>
+        </div>
+
+        <div className={styles['stars']}
+          style={{clipPath: `inset(0 0 0 ${100 - percent}%)`}}
+        >
+          <StarIcon className={styles['grey-star']}/>
+          <StarIcon className={styles['grey-star']}/>
+          <StarIcon className={styles['grey-star']}/>
+          <StarIcon className={styles['grey-star']}/>
+          <StarIcon className={styles['grey-star']}/>
+        </div>
       </div>
     );
   }

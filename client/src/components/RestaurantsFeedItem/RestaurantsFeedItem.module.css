@@ -63,7 +63,12 @@
   flex-direction: row;
 }
 
+.stars-container {
+  position: relative;
+}
+
 .stars {
+  position: absolute;
   display: flex;
   flex-direction: row;
   margin: 4px;
@@ -73,5 +78,12 @@
   height: 16px;
   width: 16px;
   fill: gold;
-  stroke: white;
+  stroke: var(--white);
+}
+
+.grey-star {
+  height: 16px;
+  width: 16px;
+  fill: var(--lightgrey);
+  stroke: var(--white);
 }
