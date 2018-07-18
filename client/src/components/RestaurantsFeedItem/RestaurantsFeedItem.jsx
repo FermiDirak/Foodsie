@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './RestaurantsFeedItem.module.css';
 
+import StarIcon from 'react-feather/dist/icons/star';
+
 class RestaurantsFeedItem extends Component {
   static propTypes = {
     restaurant: PropTypes.shape({
@@ -12,6 +14,26 @@ class RestaurantsFeedItem extends Component {
       types: PropTypes.array,
       opening_hours: PropTypes.object,
     }).isRequired,
+  }
+
+  renderRatingStars = () => {
+    const { rating } = this.props.restaurant;
+    const percent = 100 - Math.floor(100 * rating / 5);
+
+    const stars = Array(Math.ceil(rating))
+      .fill(<StarIcon className={styles['star']}/>);
+
+    return (
+      <div className={styles['stars']}
+        style={{clipPath: `inset(0 ${percent}% 0 0)`}}
+      >
+        <StarIcon className={styles['star']}/>
+        <StarIcon className={styles['star']}/>
+        <StarIcon className={styles['star']}/>
+        <StarIcon className={styles['star']}/>
+        <StarIcon className={styles['star']}/>
+      </div>
+    );
   }
 
   render() {
@@ -31,6 +53,12 @@ class RestaurantsFeedItem extends Component {
 
         <div className={styles['content']}>
           <h2 className={styles['header']}>{restaurant.name}</h2>
+
+          <div className={styles['statistics-row']}>
+            { this.renderRatingStars() }
+
+          </div>
+
         </div>
 
       </div>

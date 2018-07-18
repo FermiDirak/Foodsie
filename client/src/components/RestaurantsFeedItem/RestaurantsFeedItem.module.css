@@ -57,3 +57,21 @@
   font-size: 16pt;
   font-weight: 200;
 }
+
+.statistics-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  margin: 4px;
+}
+
+.star {
+  height: 16px;
+  width: 16px;
+  fill: gold;
+  stroke: white;
+}
