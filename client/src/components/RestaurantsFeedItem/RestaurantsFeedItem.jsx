@@ -16,6 +16,18 @@ class RestaurantsFeedItem extends Component {
     }).isRequired,
   }
 
+  renderImageGallery = () => {
+
+    return (
+      <div className={styles['image-gallery']}>
+        <div className={styles['image']} />
+        <div className={styles['image']} />
+        <div className={styles['image']} />
+        <div className={styles['image']} />
+      </div>
+    )
+  }
+
   renderIsOpen = () => {
     const { open_now } = this.props.restaurant.opening_hours;
 
@@ -85,12 +97,7 @@ class RestaurantsFeedItem extends Component {
     return (
       <div className={styles['container']}>
 
-        <div className={styles['image-gallery']}>
-          <div className={styles['image']} />
-          <div className={styles['image']} />
-          <div className={styles['image']} />
-          <div className={styles['image']} />
-        </div>
+        { this.renderImageGallery() }
 
         <div className={styles['content']}>
 
