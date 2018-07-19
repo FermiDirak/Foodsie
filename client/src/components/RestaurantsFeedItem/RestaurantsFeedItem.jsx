@@ -16,6 +16,19 @@ class RestaurantsFeedItem extends Component {
     }).isRequired,
   }
 
+  renderIsOpen = () => {
+    const { open_now } = this.props.restaurant.opening_hours;
+
+    return(
+      <p
+        className={styles['open-indicator']}
+        style={{color: open_now ? 'var(--red)' : 'var(--lightgrey)'}}
+      >
+        { open_now ? 'open now' : 'closed'}
+      </p>
+    );
+  }
+
   renderRatingStars = () => {
     const { rating } = this.props.restaurant;
     const percent = 100 - Math.floor(100 * rating / 5);
@@ -80,7 +93,11 @@ class RestaurantsFeedItem extends Component {
         </div>
 
         <div className={styles['content']}>
-          <h2 className={styles['header']}>{restaurant.name}</h2>
+
+          <div className={styles['header-row']}>
+            <h2 className={styles['header']}>{restaurant.name}</h2>
+            { this.renderIsOpen() }
+          </div>
 
           <div className={styles['statistics-row']}>
             { this.renderRatingStars() }

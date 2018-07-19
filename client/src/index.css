@@ -18,10 +18,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-div, article, header, aside {
+div, article, header, aside, p {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
