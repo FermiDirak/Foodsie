@@ -50,6 +50,8 @@
 
 
 .content {
+  flex: 1;
+
   display: flex;
   flex-direction: column;
   padding: 4px;
@@ -130,4 +132,25 @@
 
 .price-grey {
   color: var(--lightgrey);
+}
+
+
+.top-review {
+  flex: 1;
+  position: sticky;
+  width: 100%;
+
+  overflow-y: hidden;
+  text-align: center;
+  font-weight: 100;
+  color: var(--darkgrey);
+}
+
+.top-review:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(transparent, var(--white));
 }
