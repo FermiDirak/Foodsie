@@ -27,22 +27,22 @@
 }
 
 .image-gallery :nth-child(1) {
-  max-height: 66%;
+  height: 66%;
   grid-area: a;
 }
 
 .image-gallery :nth-child(2) {
-  max-height: 33%;
+  height: 33%;
   grid-area: b;
 }
 
 .image-gallery :nth-child(3) {
-  max-height: 33%;
+  height: 33%;
   grid-area: c;
 }
 
 .image-gallery :nth-child(4) {
-  max-height: 33%;
+  height: 33%;
   grid-area: d;
 }
 
