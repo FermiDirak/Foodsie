@@ -24,7 +24,16 @@ class RestaurantsFeedItem extends Component {
       .fill(<StarIcon className={styles['star']}/>);
 
     return (
-      <div className={styles['stars-container']}>
+      <div className={styles['stars-container']}
+      >
+        <div className={styles['stars']}>
+          <StarIcon className={styles['star-grey']}/>
+          <StarIcon className={styles['star-grey']}/>
+          <StarIcon className={styles['star-grey']}/>
+          <StarIcon className={styles['star-grey']}/>
+          <StarIcon className={styles['star-grey']}/>
+        </div>
+
         <div className={styles['stars']}
           style={{clipPath: `inset(0 ${percent}% 0 0)`}}
         >
@@ -34,15 +43,22 @@ class RestaurantsFeedItem extends Component {
           <StarIcon className={styles['star']}/>
           <StarIcon className={styles['star']}/>
         </div>
+      </div>
+    );
+  }
 
-        <div className={styles['stars']}
-          style={{clipPath: `inset(0 0 0 ${100 - percent}%)`}}
+  renderPrice = () => {
+    const { price_level } = this.props.restaurant;
+    const percent = 100 - Math.floor(100 * price_level / 3);
+
+    return (
+      <div className={styles['price-container']}>
+        <div className={styles['price-grey']}>$$$</div>
+        <div
+          className={styles['price']}
+          style={{clipPath: `inset(0 ${percent}% 0 0)`}}
         >
-          <StarIcon className={styles['grey-star']}/>
-          <StarIcon className={styles['grey-star']}/>
-          <StarIcon className={styles['grey-star']}/>
-          <StarIcon className={styles['grey-star']}/>
-          <StarIcon className={styles['grey-star']}/>
+          $$$
         </div>
       </div>
     );
@@ -68,6 +84,7 @@ class RestaurantsFeedItem extends Component {
 
           <div className={styles['statistics-row']}>
             { this.renderRatingStars() }
+            { this.renderPrice() }
 
           </div>
 
