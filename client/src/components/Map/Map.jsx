@@ -60,7 +60,10 @@ class Map extends Component {
     });
 
     function onCompleteRequest(places) {
-      places = places.filter(place => place.photos && place.photos.length >= 3);
+      places = places.filter(place => place.photos
+        && place.photos.length >= 4
+        && place.reviews.length >= 1
+      );
 
       fetchPlaces(places);
     }

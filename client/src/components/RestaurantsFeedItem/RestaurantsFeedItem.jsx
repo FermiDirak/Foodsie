@@ -17,14 +17,21 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderImageGallery = () => {
-    const { photos } = this.props.restaurant;
+    let { photos } = this.props.restaurant;
+
+    photos = photos.slice(0, 4);
+
+    photos = photos.map(photo => (
+      <img
+        className={styles['image']}
+        // key={photo.html_attributions[0]}
+        src={photo.getUrl({ maxWidth: 400, maxHeight: 400 })}
+      />
+    ));
 
     return (
       <div className={styles['image-gallery']}>
-        <div className={styles['image']} />
-        <div className={styles['image']} />
-        <div className={styles['image']} />
-        <div className={styles['image']} />
+        { photos }
       </div>
     )
   }
