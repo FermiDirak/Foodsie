@@ -37,7 +37,7 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderIsOpen = () => {
-    const { open_now } = this.props.restaurant.opening_hours;
+    const { open_now } = this.props.restaurant.opening_hours || {};
 
     return(
       <p
@@ -109,8 +109,6 @@ class RestaurantsFeedItem extends Component {
 
   render() {
     const { restaurant } = this.props;
-
-    console.log(restaurant);
 
     return (
       <div className={styles['container']}>

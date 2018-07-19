@@ -6,6 +6,7 @@ import { googleMapsAPIKey } from '../../publicKeys';
 
 import GoogleMap, {
   GoogleApiWrapper,
+  Marker,
 } from 'google-maps-react';
 
 class Map extends Component {
@@ -18,13 +19,17 @@ class Map extends Component {
     fetchPlaces: () => {},
   }
 
+  state = {
+    places: [],
+  }
+
   fetchPlaces = (_, map, place) => {
     const { fetchPlaces, google } = this.props;
     const placesService = new google.maps.places.PlacesService(map);
 
     const request = {
       location: map.getCenter(),
-      radius: 500,
+      radius: 1000,
       type: ['restaurant'],
     };
 
@@ -59,22 +64,27 @@ class Map extends Component {
       }
     });
 
-    function onCompleteRequest(places) {
+    const onCompleteRequest = (places) => {
       places = places.filter(place => place.photos
         && place.photos.length >= 4
         && place.reviews.length >= 1
       );
+
+      this.setState({ places: places });
 
       fetchPlaces(places);
     }
   }
 
   render() {
+    const { google } = this.props;
+    const { places } = this.state;
+
     return (
       <GoogleMap
         google={this.props.google}
         className={styles['map']}
-        zoom={15}
+        zoom={16}
         centerAroundCurrentLocation={true}
         onClick={this.fetchPlaces}
         onReady={this.fetchPlaces}
@@ -136,6 +146,26 @@ class Map extends Component {
         ]}
       >
 
+        {
+          places.map(place => {
+            const { id, name, geometry } = place;
+
+            return (
+              <Marker
+                key={id}
+                title={name}
+                name={name}
+                position={{lat: geometry.location.lat(), lng: geometry.location.lng()}}
+                icon={{
+                  url: 'https://irp-cdn.multiscreensite.com/b8033cff/dms3rep/multi/mobile/home-location-icon-1272x1260.png',
+                  anchor: new google.maps.Point(32,32),
+                  scaledSize: new google.maps.Size(64,64)
+                }}
+              />
+            );
+          })
+
+        }
       </GoogleMap>
     );
   }
