@@ -17,7 +17,6 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderImageGallery = () => {
-
     return (
       <div className={styles['image-gallery']}>
         <div className={styles['image']} />
