@@ -17,6 +17,8 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderImageGallery = () => {
+    const { photos } = this.props.restaurant;
+
     return (
       <div className={styles['image-gallery']}>
         <div className={styles['image']} />
@@ -89,10 +91,11 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderTopReview = () => {
+    const { author_name, text } = this.props.restaurant.reviews[0];
 
     return (
       <div className={styles['top-review']}>
-        Jasmine says: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        {author_name} says: {text}
       </div>
     );
   }

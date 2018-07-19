@@ -37,12 +37,13 @@ class Map extends Component {
         places.forEach((place, i) => {
           const request = {
             placeId: place.place_id,
-            fields: ['photos'],
+            fields: ['photos', 'reviews'],
           };
 
           placesService.getDetails(request, (placeDetails, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
               places[i].photos = placeDetails.photos;
+              places[i].reviews = placeDetails.reviews;
             }
 
             requestsCompletedCount += 1;
