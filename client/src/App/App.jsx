@@ -15,8 +15,8 @@ class App extends Component {
         <Header/>
 
         <Switch>
-          <Route exact path='/map' component={Home}/>
-          <Route exact path='/' component={Placeholder}/>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/placeholder' component={Placeholder}/>
         </Switch>
       </div>
     );
