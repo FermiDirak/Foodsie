@@ -1,6 +1,6 @@
 # Foodsie
 
-![alt text](./Foodsie.png "Foodsie Logo")
+![alt text](./foodsie.png "Foodsie Logo")
 
 Foodsie is a Food Review Aggregator that provides food critics and resturant reviewers a platform to share high quality reviews and content.
 
