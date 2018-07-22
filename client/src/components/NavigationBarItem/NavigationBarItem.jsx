@@ -19,7 +19,7 @@ class NavigationBarItem extends Component {
     const { isSelected, icon, label } = this.props;
 
     return (
-      <div className={styles['container']}>
+      <div className={ isSelected ? styles['container-selected'] : styles['container'] }>
         {icon}
         <h2 className={styles['label']}> {label} </h2>
       </div>

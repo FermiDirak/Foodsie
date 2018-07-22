@@ -25,7 +25,7 @@ class Sidebar extends Component {
     return (
       <aside className={styles.Sidebar}>
         <NavigationBar>
-          <NavigationBarItem label='restaurants' icon={<RestaurantsIcon/>} />
+          <NavigationBarItem label='restaurants' icon={<RestaurantsIcon/>} isSelected={true} />
           <NavigationBarItem label='foodies' icon={<FoodiesIcon/>} />
         </NavigationBar>
 

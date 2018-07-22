@@ -21,11 +21,12 @@ class RestaurantsFeedItem extends Component {
 
     photos = photos.slice(0, 4);
 
-    photos = photos.map(photo => (
+    photos = photos.map((photo, i) => (
       <img
+        key={i}
         className={styles['image']}
         // key={photo.html_attributions[0]}
-        src={photo.getUrl({ maxWidth: 400, maxHeight: 400 })}
+        src={photo.getUrl({ maxWidth: 200, maxHeight: 100 })}
       />
     ));
 
