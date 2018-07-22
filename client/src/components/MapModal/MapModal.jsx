@@ -57,8 +57,8 @@ class MapModal extends Component {
           <div className={styles['content']}>
             { children }
           </div>
-        </div>
 
+        </div>
       </div>
     );
   }
