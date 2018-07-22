@@ -144,7 +144,7 @@
   width: 100%;
 
   overflow-y: hidden;
-  text-align: justify;
+  text-align: left;
   font-weight: 100;
   color: var(--darkgrey);
   padding-right: 8px;
