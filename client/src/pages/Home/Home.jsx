@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './Home.module.css';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import Map from '../../components/Map/Map.jsx';
+import MapModal from '../../components/MapModal/MapModal.jsx';
 
-import axios from 'axios';
-import { googleMapsAPIKey } from '../../publicKeys';
+import { Route } from 'react-router-dom';
 
 class Home extends Component {
   state = {
@@ -26,6 +26,8 @@ class Home extends Component {
 
         <div className={styles['map-container']} >
           <Map fetchPlaces={this.fetchPlaces}/>
+
+          <Route path='/restaurant/:id'component={MapModal} />
         </div>
 
         <Sidebar restaurants={restaurants}/>

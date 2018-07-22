@@ -15,8 +15,8 @@ class App extends Component {
         <Header/>
 
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route exact path='/placeholder' component={Placeholder}/>
+          <Route exact path='/placeholder' component={Placeholder} />
+          <Route path='/' component={Home} />
         </Switch>
       </div>
     );
