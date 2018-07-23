@@ -1,0 +1,26 @@
+.gallery {
+  display: flex;
+
+  height: 300px;
+
+  background: var(--lightgrey);
+}
+
+.content {
+  flex: 1;
+  background: #f0f0f0;
+}
+
+.restaurant-info-card {
+  top: -16px;
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+  margin: 0 16px;
+
+  background: var(--white);
+
+  box-shadow: rgba(0, 0, 0, 0.10) 0px 0px 1px 0px,
+              rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+}

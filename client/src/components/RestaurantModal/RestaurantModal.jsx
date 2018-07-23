@@ -11,12 +11,28 @@ class RestaurantModal extends Component {
     }),
   };
 
+  renderGallery = () => (
+    <div className={styles['gallery']} />
+  );
+
   render() {
     const { id } = this.props.match.params;
 
     return (
       <MapModal redirectURL='/'>
-        Swag
+        { this.renderGallery() }
+
+        <div className={styles['content']}>
+          <div className={styles['restaurant-info-card']}>
+            <h2>Restaurant Name</h2>
+            <sub>Test</sub>
+          </div>
+
+          <div className={styles['reviews-list']}>
+
+          </div>
+
+        </div>
       </MapModal>
     );
   }
