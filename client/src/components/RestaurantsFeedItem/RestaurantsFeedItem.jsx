@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './RestaurantsFeedItem.module.css';
 
 import StarIcon from 'react-feather/dist/icons/star';
@@ -119,7 +120,9 @@ class RestaurantsFeedItem extends Component {
         <div className={styles['content']}>
 
           <div className={styles['header-row']}>
-            <h2 className={styles['header']}>{restaurant.name}</h2>
+            <Link to={`/restaurant/${restaurant.id}`}>
+              <h2 className={styles['header']}>{restaurant.name}</h2>
+            </Link>
             { this.renderIsOpen() }
           </div>
 

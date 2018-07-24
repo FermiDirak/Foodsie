@@ -41,6 +41,11 @@ button {
   outline: inherit;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
