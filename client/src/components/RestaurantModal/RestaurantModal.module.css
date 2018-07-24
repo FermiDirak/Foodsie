@@ -18,9 +18,22 @@
   width: 400px;
   height: 200px;
   margin: 0 16px;
+  padding: 8px;
 
   background: var(--white);
 
   box-shadow: rgba(0, 0, 0, 0.10) 0px 0px 1px 0px,
               rgba(0, 0, 0, 0.24) 0px 2px 2px 0px;
+}
+
+.restaurant-info-card > h2 {
+  font-weight: 300;
+  color: var(--darkergrey);
+}
+
+.restaurant-info-card > sub {
+  padding: 4px 0;
+  font-weight: 200;
+  font-size: 12pt;
+  color: var(--darkgrey);
 }

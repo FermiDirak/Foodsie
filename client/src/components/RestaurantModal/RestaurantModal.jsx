@@ -11,6 +11,10 @@ class RestaurantModal extends Component {
     }),
   };
 
+  fetchRestaurantData = () => {
+
+  }
+
   renderGallery = () => (
     <div className={styles['gallery']} />
   );
@@ -25,7 +29,7 @@ class RestaurantModal extends Component {
         <div className={styles['content']}>
           <div className={styles['restaurant-info-card']}>
             <h2>Restaurant Name</h2>
-            <sub>Test</sub>
+            <sub>123 Restaurant Address Way 123456, CA</sub>
           </div>
 
           <div className={styles['reviews-list']}>
