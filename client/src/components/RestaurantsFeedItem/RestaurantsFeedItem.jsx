@@ -26,8 +26,8 @@ class RestaurantsFeedItem extends Component {
       <img
         key={i}
         className={styles['image']}
-        // key={photo.html_attributions[0]}
         src={photo.getUrl({ maxWidth: 200, maxHeight: 100 })}
+        alt='restaurant gallery'
       />
     ));
 
@@ -55,28 +55,20 @@ class RestaurantsFeedItem extends Component {
     const { rating } = this.props.restaurant;
     const percent = 100 - Math.floor(100 * rating / 5);
 
-    const stars = Array(Math.ceil(rating))
-      .fill(<StarIcon className={styles['star']}/>);
+    const greystars = Array(5).fill(<StarIcon className={styles['star-grey']}/>);
+    const goldstars = Array(5).fill(<StarIcon className={styles['star']}/>);
 
     return (
       <div className={styles['stars-container']}
       >
         <div className={styles['stars']}>
-          <StarIcon className={styles['star-grey']}/>
-          <StarIcon className={styles['star-grey']}/>
-          <StarIcon className={styles['star-grey']}/>
-          <StarIcon className={styles['star-grey']}/>
-          <StarIcon className={styles['star-grey']}/>
+          { greystars }
         </div>
 
         <div className={styles['stars']}
           style={{clipPath: `inset(0 ${percent}% 0 0)`}}
         >
-          <StarIcon className={styles['star']}/>
-          <StarIcon className={styles['star']}/>
-          <StarIcon className={styles['star']}/>
-          <StarIcon className={styles['star']}/>
-          <StarIcon className={styles['star']}/>
+          { goldstars }
         </div>
       </div>
     );
@@ -100,11 +92,14 @@ class RestaurantsFeedItem extends Component {
   }
 
   renderTopReview = () => {
+    const { id } = this.props.restaurant;
     const { author_name, text } = this.props.restaurant.reviews[0];
 
     return (
       <div className={styles['top-review']}>
-        {author_name} says: {text}
+        <Link to={`/restaurant/${id}`}>
+          {author_name} says: {text}
+        </Link>
       </div>
     );
   }
