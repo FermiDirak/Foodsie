@@ -85,59 +85,6 @@
   align-items: center;
 }
 
-
-.stars-container {
-  position: sticky;
-}
-
-.stars-container > :nth-child(2) {
-  position: absolute;
-}
-
-.stars {
-  display: flex;
-  flex-direction: row;
-  margin: 4px 0;
-}
-
-.star {
-  height: 16px;
-  width: 16px;
-  fill: var(--gold);
-  stroke: var(--white);
-}
-
-.star-grey {
-  height: 16px;
-  width: 16px;
-  fill: var(--lightgrey);
-  stroke: var(--white);
-}
-
-
-
-.price-container {
-  position: sticky;
-
-  margin: 0 8px;
-
-  font-weight: 800;
-  font-size: 12px;
-}
-
-.price-container > :nth-child(2) {
-  position: absolute;
-}
-
-.price {
-  color: #55ffbb;
-}
-
-.price-grey {
-  color: var(--lightgrey);
-}
-
-
 .top-review {
   flex: 1;
   position: sticky;

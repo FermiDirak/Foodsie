@@ -6,6 +6,7 @@ import styles from './RestaurantsFeedItem.module.css';
 import StarIcon from 'react-feather/dist/icons/star';
 
 import PriceDisplay from './../PriceDisplay/PriceDisplay.jsx';
+import StarsDisplay from '../StarsDisplay/StarsDisplay';
 
 class RestaurantsFeedItem extends Component {
   static propTypes = {
@@ -112,7 +113,7 @@ class RestaurantsFeedItem extends Component {
           </div>
 
           <div className={styles['statistics-row']}>
-            { this.renderRatingStars() }
+            <StarsDisplay rating={restaurant.rating} />
             <PriceDisplay price={restaurant.price_level} />
           </div>
 
