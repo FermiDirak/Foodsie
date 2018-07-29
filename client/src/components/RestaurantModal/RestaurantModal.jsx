@@ -16,7 +16,14 @@ class RestaurantModal extends Component {
   }
 
   renderGallery = () => (
-    <div className={styles['gallery']} />
+    <div className={styles['image-gallery']}>
+      <div className={styles['image']} />
+      <div className={styles['image']} />
+      <div className={styles['image']} />
+      <div className={styles['image']} />
+      <div className={styles['image']} />
+      <div className={styles['image']} />
+    </div>
   );
 
   render() {

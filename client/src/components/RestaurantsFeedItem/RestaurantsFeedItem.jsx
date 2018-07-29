@@ -55,17 +55,22 @@ class RestaurantsFeedItem extends Component {
     const { rating } = this.props.restaurant;
     const percent = 100 - Math.floor(100 * rating / 5);
 
-    const greystars = Array(5).fill(<StarIcon className={styles['star-grey']}/>);
-    const goldstars = Array(5).fill(<StarIcon className={styles['star']}/>);
+    const greystars = Array(5).map((_, i) => (
+      <StarIcon className={styles['star-grey']} key={i} />
+    ));
+
+    const goldstars = Array(5).map((_, i) => (
+      <StarIcon className={styles['star']} key={i} />
+    ));
 
     return (
-      <div className={styles['stars-container']}
-      >
+      <div className={styles['stars-container']}>
         <div className={styles['stars']}>
           { greystars }
         </div>
 
-        <div className={styles['stars']}
+        <div
+          className={styles['stars']}
           style={{clipPath: `inset(0 ${percent}% 0 0)`}}
         >
           { goldstars }

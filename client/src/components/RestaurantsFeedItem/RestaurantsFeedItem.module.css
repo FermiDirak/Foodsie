@@ -26,22 +26,22 @@
   margin: 4px;
 }
 
-.image-gallery :nth-child(1) {
+.image-gallery > :nth-child(1) {
   height: 66%;
   grid-area: a;
 }
 
-.image-gallery :nth-child(2) {
+.image-gallery > :nth-child(2) {
   height: 33%;
   grid-area: b;
 }
 
-.image-gallery :nth-child(3) {
+.image-gallery > :nth-child(3) {
   height: 33%;
   grid-area: c;
 }
 
-.image-gallery :nth-child(4) {
+.image-gallery > :nth-child(4) {
   height: 33%;
   grid-area: d;
 }
