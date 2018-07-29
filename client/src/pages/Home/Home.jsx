@@ -27,7 +27,7 @@ class Home extends Component {
         <div className={styles['map-container']} >
           <Map fetchPlaces={this.fetchPlaces}/>
 
-          <Route path='/restaurant/:id'component={RestaurantModal} />
+          <Route path='/restaurant/:id' component={() => <RestaurantModal restaurant={restaurants[0]} />} />
         </div>
 
         <Sidebar restaurants={restaurants}/>
