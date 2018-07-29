@@ -5,6 +5,8 @@ import styles from './RestaurantsFeedItem.module.css';
 
 import StarIcon from 'react-feather/dist/icons/star';
 
+import PriceDisplay from './../PriceDisplay/PriceDisplay.jsx';
+
 class RestaurantsFeedItem extends Component {
   static propTypes = {
     restaurant: PropTypes.shape({
@@ -79,23 +81,6 @@ class RestaurantsFeedItem extends Component {
     );
   }
 
-  renderPrice = () => {
-    const { price_level } = this.props.restaurant;
-    const percent = 100 - Math.floor(100 * price_level / 3);
-
-    return (
-      <div className={styles['price-container']}>
-        <div className={styles['price-grey']}>$$$</div>
-        <div
-          className={styles['price']}
-          style={{clipPath: `inset(0 ${percent}% 0 0)`}}
-        >
-          $$$
-        </div>
-      </div>
-    );
-  }
-
   renderTopReview = () => {
     const { id } = this.props.restaurant;
     const { author_name, text } = this.props.restaurant.reviews[0];
@@ -128,7 +113,7 @@ class RestaurantsFeedItem extends Component {
 
           <div className={styles['statistics-row']}>
             { this.renderRatingStars() }
-            { this.renderPrice() }
+            <PriceDisplay price={restaurant.price_level} />
           </div>
 
           { this.renderTopReview() }

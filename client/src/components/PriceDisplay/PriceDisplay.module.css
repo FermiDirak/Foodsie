@@ -1,0 +1,20 @@
+.container {
+  position: sticky;
+
+  margin: 0 8px;
+
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.container > :nth-child(2) {
+  position: absolute;
+}
+
+.price {
+  color: var(--green);
+}
+
+.price-grey {
+  color: var(--lightgrey);
+}
