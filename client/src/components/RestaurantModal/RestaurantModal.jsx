@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './RestaurantModal.module.css';
 
-import axios from 'axios';
-import { googleMapsAPIKey } from '../../publicKeys'
-
 import MapModal from '../../components/MapModal/MapModal.jsx';
+import StarsDisplay from '../StarsDisplay/StarsDisplay.jsx';
+import PriceDisplay from '../PriceDisplay/PriceDisplay.jsx';
 
 class RestaurantModal extends Component {
   static propTypes = {
@@ -28,16 +27,6 @@ class RestaurantModal extends Component {
 
   }
 
-  // componentDidMount() {
-  //   this.fetchRestaurantData();
-  // }
-
-  // fetchRestaurantData = () => {
-  //   const { id } = this.props.match.params;
-
-  //   axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${id}`)
-  // }
-
   renderGallery = () => (
     <div className={styles['image-gallery']}>
       <div className={styles['image']} />
@@ -49,10 +38,37 @@ class RestaurantModal extends Component {
     </div>
   );
 
-  render() {
-    // const { id } = this.props.match.params;
+  renderReviewsList = () => {
+    const { reviews } = this.props.restaurant;
 
-    console.log(this.props.restaurant);
+    return (
+      <div className={styles['reviews-scroll']}>
+        {
+          reviews.map((review, i) => (
+            <div className={styles['review']}>
+              <img
+                className={styles['review-profile-icon']}
+                src={review.profile_photo_url}
+              />
+              <p>{review.author_name} says: {review.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    )
+  }
+
+  /** displayed while restaurant is loading */
+  renderLoading = () => (
+    <div/>
+  )
+
+  render() {
+    const { restaurant } = this.props;
+
+    if (!restaurant) {
+      return this.renderLoading();
+    }
 
     return (
       <MapModal redirectURL='/'>
@@ -60,13 +76,17 @@ class RestaurantModal extends Component {
 
         <div className={styles['content']}>
           <div className={styles['restaurant-info-card']}>
-            <h2>Restaurant Name</h2>
-            <sub>123 Restaurant Address Way 123456, CA</sub>
+            <h2>{restaurant.name}</h2>
+            <sub>{restaurant.vicinity}</sub>
+
+            <div className={styles['statistics-row']}>
+              <StarsDisplay rating={restaurant.rating} />
+              <PriceDisplay price={restaurant.price_level} />
+            </div>
+
           </div>
 
-          <div className={styles['reviews-list']}>
-
-          </div>
+          {this.renderReviewsList()}
 
         </div>
       </MapModal>

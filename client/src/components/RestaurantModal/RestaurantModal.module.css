@@ -47,7 +47,6 @@
   position: relative;
 
   width: 400px;
-  height: 200px;
   margin: 0 16px;
   padding: 8px;
 
@@ -67,4 +66,43 @@
   font-weight: 200;
   font-size: 12pt;
   color: var(--darkgrey);
+}
+
+.statistics-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.reviews-scroll {
+  display: block;
+  height: 0;
+  padding: 0 12px;
+}
+
+.review {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+
+  /* background: var(--lightgrey); */
+  border-radius: 12px;
+  border: 1px solid var(--lightgrey);
+
+  margin: 24px 16px;
+  padding: 12px 0;
+
+  min-height: 48px;
+}
+
+.review > p {
+  margin: auto 16px auto 60px;
+}
+
+.review-profile-icon {
+  height: 54px;
+  width: 54px;
+  position: absolute;
+  top: -12px;
+  left: -12px;
 }
