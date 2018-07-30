@@ -13,7 +13,6 @@ class PriceDisplay extends Component {
 
   render() {
     const { price } = this.props;
-
     const percent = 100 - Math.floor(100 * price / 3);
 
     return (
