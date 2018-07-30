@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Header.module.css';
 
 class Header extends Component {
-  state = {
-
-  };
-
   render() {
     return (
       <header className={styles['container']}>

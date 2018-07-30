@@ -21,11 +21,8 @@ class RestaurantModal extends Component {
       types: PropTypes.array,
       opening_hours: PropTypes.object,
     }),
-  };
-
-  state = {
-
   }
+
 
   renderGallery = () => {
     let { photos } = this.props.restaurant;
