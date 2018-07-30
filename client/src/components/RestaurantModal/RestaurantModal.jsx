@@ -27,16 +27,26 @@ class RestaurantModal extends Component {
 
   }
 
-  renderGallery = () => (
-    <div className={styles['image-gallery']}>
-      <div className={styles['image']} />
-      <div className={styles['image']} />
-      <div className={styles['image']} />
-      <div className={styles['image']} />
-      <div className={styles['image']} />
-      <div className={styles['image']} />
-    </div>
-  );
+  renderGallery = () => {
+    let { photos } = this.props.restaurant;
+
+    photos = photos.slice(0, 6);
+
+    photos = photos.map((photo, i) => (
+      <img
+        key={i}
+        className={styles['image']}
+        src={photo.getUrl({ maxWidth: 500, maxHeight: 200 })}
+        alt='restaurant gallery'
+      />
+    ));
+
+    return (
+      <div className={styles['image-gallery']}>
+        { photos }
+      </div>
+    );
+  }
 
   renderReviewsList = () => {
     const { reviews } = this.props.restaurant;
@@ -45,7 +55,7 @@ class RestaurantModal extends Component {
       <div className={styles['reviews-scroll']}>
         {
           reviews.map((review, i) => (
-            <div className={styles['review']}>
+            <div className={styles['review']} key={i}>
               <img
                 className={styles['review-profile-icon']}
                 src={review.profile_photo_url}

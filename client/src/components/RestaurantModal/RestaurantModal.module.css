@@ -10,32 +10,9 @@
   height: 300px;
 }
 
-.image-gallery > :nth-child(1) {
-  grid-area: a;
-}
-
-.image-gallery > :nth-child(2) {
-  grid-area: b;
-}
-
-.image-gallery > :nth-child(3) {
-  grid-area: c;
-}
-
-.image-gallery > :nth-child(4) {
-  grid-area: d;
-}
-
-.image-gallery > :nth-child(5) {
-  grid-area: e;
-}
-
-.image-gallery > :nth-child(6) {
-  grid-area: f;
-}
-
 .image {
-  background: var(--lightgrey);
+  height: 50%;
+  width: 100%;
 }
 
 .content {

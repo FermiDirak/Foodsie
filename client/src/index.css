@@ -25,6 +25,8 @@ div, article, header, aside, p {
   flex-direction: column;
   margin: 0;
   padding: 0;
+
+  color: var(--darkergrey);
 }
 
 h1, h2, h3 {

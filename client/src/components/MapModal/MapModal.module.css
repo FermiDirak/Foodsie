@@ -37,3 +37,7 @@
 
   overflow-y: auto;
 }
+
+.content::-webkit-scrollbar {
+  display: none;
+}
