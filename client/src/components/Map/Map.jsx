@@ -85,11 +85,15 @@ class Map extends Component {
         google={this.props.google}
         className={styles['map']}
         zoom={16}
-        centerAroundCurrentLocation={true}
         onClick={this.fetchPlaces}
+        onDrag={this.fetchPlaces}
         onReady={this.fetchPlaces}
         clickableIcons={false}
         disableDefaultUI={true}
+        initialCenter={{
+            lat: 37.7880,
+            lng: -122.4075
+          }}
         styles={[
           {
             "featureType": "administrative.land_parcel",
@@ -161,6 +165,7 @@ class Map extends Component {
                   anchor: new google.maps.Point(32,32),
                   scaledSize: new google.maps.Size(64,64)
                 }}
+                onClick={() => { console.log('hello world'); }}
               />
             );
           })

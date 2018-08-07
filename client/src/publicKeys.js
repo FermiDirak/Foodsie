@@ -1,3 +1,3 @@
-const googleMapsAPIKey = 'AIzaSyAu2ghVBWddafMcKs6b__fCF7hGkTyb0v8';
+const googleMapsAPIKey = 'AIzaSyDqwJRtIrlwl_hp0FlZnJWuwIaxENUcu4o';
 
 export { googleMapsAPIKey };
