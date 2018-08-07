@@ -5,10 +5,6 @@ import styles from './Placeholder.module.css';
 
 
 class Placeholder extends Component {
-  state = {
-
-  };
-
   render() {
     return (
       <div className={styles['Placeholder']}>

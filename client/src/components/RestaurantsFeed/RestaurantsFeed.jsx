@@ -19,7 +19,6 @@ class RestaurantsFeed extends Component {
     return (
       <div className={styles['container']}>
         <div className={styles['scroll-container']}>
-
           {
             restaurants.map(restaurant => (
               <RestaurantsFeedItem key={restaurant.id} restaurant={restaurant} />
