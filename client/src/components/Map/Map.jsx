@@ -4,6 +4,8 @@ import styles from './Map.module.css';
 
 import { googleMapsAPIKey } from '../../publicKeys';
 
+import { withRouter } from 'react-router-dom';
+
 import GoogleMap, {
   GoogleApiWrapper,
   Marker,
@@ -86,7 +88,7 @@ class Map extends Component {
         className={styles['map']}
         zoom={16}
         onClick={this.fetchPlaces}
-        onDrag={this.fetchPlaces}
+        onDragend={this.fetchPlaces}
         onReady={this.fetchPlaces}
         clickableIcons={false}
         disableDefaultUI={true}
@@ -160,12 +162,12 @@ class Map extends Component {
                 title={name}
                 name={name}
                 position={{lat: geometry.location.lat(), lng: geometry.location.lng()}}
+                onClick={() => { this.props.history.push(`/restaurant/${id}`) }}
                 icon={{
                   url: 'https://irp-cdn.multiscreensite.com/b8033cff/dms3rep/multi/mobile/home-location-icon-1272x1260.png',
                   anchor: new google.maps.Point(32,32),
                   scaledSize: new google.maps.Size(64,64)
                 }}
-                onClick={() => { console.log('hello world'); }}
               />
             );
           })
@@ -180,8 +182,8 @@ const loadingContainer = (props) => (
   <div className={styles['container']}> Loading </div>
 )
 
-export default GoogleApiWrapper({
+export default withRouter(GoogleApiWrapper({
   apiKey: googleMapsAPIKey,
   libraries: ['places', 'visualization'],
   LoadingContainer: loadingContainer,
-})(Map);
+})(Map));
