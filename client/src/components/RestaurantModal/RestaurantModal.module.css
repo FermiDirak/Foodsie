@@ -83,3 +83,16 @@
   top: -12px;
   left: -12px;
 }
+
+@media only screen and (max-width: 900px) {
+  .restaurant-info-card {
+    max-width: 80%;
+    min-height: 100px;
+    /* margin: 0 !important; */
+    /* padding: 0 !important; */
+  }
+
+  .review {
+    font-size: 10pt;
+  }
+}

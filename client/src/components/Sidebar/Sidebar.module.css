@@ -6,4 +6,5 @@
 
   /* border-top: 1px solid var(--lightgrey); */
   box-shadow: inset 0 1px 3px var(--lightgrey);
+  z-index: 0;
 }
