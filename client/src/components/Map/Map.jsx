@@ -48,8 +48,6 @@ class Map extends Component {
             fields: ['photos', 'reviews' ],
           };
 
-          console.log(google.maps.places);
-
           placesService.getDetails(request, (placeDetails, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
               places[i].photos = placeDetails.photos;
@@ -70,8 +68,6 @@ class Map extends Component {
     });
 
     const onCompleteRequest = (places) => {
-      console.log(' places', places);
-
       places = places.filter(place => place.photos
         && place.photos.length >= 4
       );

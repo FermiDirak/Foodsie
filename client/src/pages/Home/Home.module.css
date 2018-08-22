@@ -6,6 +6,23 @@
   background: var(--white);
 }
 
+@media only screen and (max-width: 900px) {
+  .Home {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .Home > :nth-child(1) {
+    height: 300px;
+    flex: 0;
+  }
+
+  .Home > :nth-child(2) {
+    flex: 1;
+  }
+
+}
+
 .map-container {
   position: sticky;
   flex: 1;
