@@ -13,12 +13,13 @@
   }
 
   .Home > :nth-child(1) {
-    height: 300px;
+    height: 250px;
     flex: 0;
   }
 
   .Home > :nth-child(2) {
     flex: 1;
+    width: 100%;
   }
 
 }
