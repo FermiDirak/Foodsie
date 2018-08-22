@@ -32,7 +32,7 @@ class Map extends Component {
     const request = {
       location: map.getCenter(),
       radius: 1000,
-      type: ['restaurant'],
+      type: ['restaurant', 'bar', 'cafe', 'meal_delivery', 'meal_takeaway' ],
     };
 
     placesService.nearbySearch(request, (places, status) => {
@@ -44,7 +44,7 @@ class Map extends Component {
         places.forEach((place, i) => {
           const request = {
             placeId: place.place_id,
-            fields: ['photos', 'reviews'],
+            fields: ['photos', 'reviews' ],
           };
 
           placesService.getDetails(request, (placeDetails, status) => {
@@ -67,9 +67,10 @@ class Map extends Component {
     });
 
     const onCompleteRequest = (places) => {
+      console.log(' places', places);
+
       places = places.filter(place => place.photos
         && place.photos.length >= 4
-        && place.reviews.length >= 1
       );
 
       this.setState({ places: places });
