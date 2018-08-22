@@ -84,6 +84,13 @@ class RestaurantsFeedItem extends Component {
 
   renderTopReview = () => {
     const { id } = this.props.restaurant;
+
+    if (!this.props.restaurant.reviews) {
+      return (
+        <div/>
+      );
+    }
+
     const { author_name, text } = this.props.restaurant.reviews[0];
 
     return (

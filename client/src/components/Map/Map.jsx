@@ -31,8 +31,9 @@ class Map extends Component {
 
     const request = {
       location: map.getCenter(),
+      type: 'restaurant',
+      // rankBy: google.maps.places.RankBy.DISTANCE,
       radius: 1000,
-      type: ['restaurant', 'bar', 'cafe', 'meal_delivery', 'meal_takeaway' ],
     };
 
     placesService.nearbySearch(request, (places, status) => {
@@ -46,6 +47,8 @@ class Map extends Component {
             placeId: place.place_id,
             fields: ['photos', 'reviews' ],
           };
+
+          console.log(google.maps.places);
 
           placesService.getDetails(request, (placeDetails, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
