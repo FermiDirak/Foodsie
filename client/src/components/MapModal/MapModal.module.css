@@ -27,7 +27,6 @@
 
   .container {
     margin: 4px 4px 0 4px;
-    border-radius: 0;
     width: calc(100% - 8px);
   }
 
